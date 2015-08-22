@@ -1,3 +1,5 @@
+keep if ric == "EURCHF=D3" | ric == "EURGBP=D3" | ric == "EURNOK=D3" | ric == "EURSEK=D3" | ric == "EUR=D3" | ric == "EURAUD=D3" | ric == "EURCAD=D3" | ric == "EURCZK=D3" | ric == "EURDKK=D3" | ric == "EURHUF=D3" | ric == "EURJPY=D3" | ric == "EURNZD=D3" | ric == "EURPLN=D3" | ric == "EURRON=D3" | ric == "GBP=D3" | ric == "AUD=D3" | ric == "CAD=D3" | ric == "EUR=D3" | ric == "HKD=D3" | ric == "JPY=D3" | ric == "MXN=D3" | ric == "NZD=D3" | ric == "SGD=D3" | ric == "ZAR=D3"
+replace dlp = -1*dlp if ric == "GBP=D3" | ric == "AUD=D3" | ric == "CAD=D3" | ric == "EUR=D3" | ric == "NZD=D3" 
 gen double datetime = date*24*60*60*1000 + hour*60*1000*30
 format datetime %tcNN/DD/CCYY_HH:MM:SS
 egen id = group(ric)
