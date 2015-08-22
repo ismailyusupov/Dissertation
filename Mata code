@@ -1,0 +1,11 @@
+gen double datetime = date*24*60*60*1000 + hour*60*1000*30
+format datetime %tcNN/DD/CCYY_HH:MM:SS
+egen id = group(ric)
+tsset id datetime
+forvalues i = 1/240 {
+    by id: gen x_`i' = dlp[_n-`i']
+}
+sort datetime
+forvalues i = 1/240 {
+    by datetime: reg dlp x_`i'
+}
