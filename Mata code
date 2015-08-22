@@ -9,5 +9,5 @@ forvalues i = 1/240 {
 }
 sort datetime
 forvalues i = 1/240 {
-    by datetime: reg dlp x_`i'
+    statsby _b _se, by(datetime) saving(results): reg dlp x_`i'
 }
