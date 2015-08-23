@@ -1,2 +1,3 @@
 gen date2 = date1
 gen date2 = substr(date1,-4,.)
+
