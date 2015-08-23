@@ -8,6 +8,7 @@ forvalues i = 1/240 {
     by id: gen x_`i' = dlp[_n-`i']
 }
 sort datetime
+keep if date2 = 2003
 forvalues i = 1/240 {
-    statsby _b _se, by(datetime) saving(results): reg dlp x_`i'
+    statsby _b _se, by(datetime) saving(results`i'): reg dlp x_`i'
 }
