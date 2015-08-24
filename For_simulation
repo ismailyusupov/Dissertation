@@ -1,3 +1,5 @@
+cd "L:\THEATRES_STUDENTS\_Ismail"
+use fxdata
 cd "L:\THEATRES_STUDENTS\_Ismail\2004"
 destring date2
 keep if date2 = 2004
