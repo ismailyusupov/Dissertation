@@ -8,7 +8,6 @@ forvalues i = 1/240 {
     by id: gen x_`i' = dlp[_n-`i']
 }
 sort datetime
-gen date2 = date1
 gen date2 = substr(date1,-4,.)
 keep if date2 = 2003
 forvalues i = 1/240 {
