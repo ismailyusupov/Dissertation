@@ -1,5 +1,6 @@
+cd "L:\THEATRES_STUDENTS\_Ismail\2004"
 destring date2
-keep if date2 = 2003
+keep if date2 = 2004
 forvalues i = 1/240 {
     statsby _b _se, by(datetime) saving(results`i'): reg dlp x_`i'
 }
@@ -11,3 +12,5 @@ forvalues i=2/240 {
 	drop _merge
 	save results1,replace
 }
+
+
