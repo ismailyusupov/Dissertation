@@ -1,7 +1,7 @@
 cd "L:\THEATRES_STUDENTS\_Ismail"
 use fxdata
 cd "L:\THEATRES_STUDENTS\_Ismail\2004"
-destring date2
+destring date2, replace
 keep if date2 = 2004
 forvalues i = 1/240 {
     statsby _b _se, by(datetime) saving(results`i'): reg dlp x_`i'
