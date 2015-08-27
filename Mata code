@@ -14,6 +14,7 @@ keep if date2 = 2003
 forvalues i = 1/240 {
     statsby _b _se, by(datetime) saving(results`i'): reg dlp x_`i'
 }
+set more off
 forvalues i=2/240 {
 	use results`i' , clear 
 	merge 1:1 datetime using results1
